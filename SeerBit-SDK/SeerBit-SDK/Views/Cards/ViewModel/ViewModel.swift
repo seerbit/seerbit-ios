@@ -42,7 +42,8 @@ enum CardType: String {
 class CardViewModel: ObservableObject {
     @Published var amountToPay: Double = 0.0
     @Published var surchageFee: Double = 0.0
-    @Published var nameOfUser: String = ""
-    @Published var emailOfUser: String = ""
+    @Published var nameOfUser: String = "Tola Simbo"
+    @Published var emailOfUser: String = "omotola.sambo@seerbit.om"
     @Published var rememberDevice: Bool = false
+    @Published var currency: String = "NGN"
 }

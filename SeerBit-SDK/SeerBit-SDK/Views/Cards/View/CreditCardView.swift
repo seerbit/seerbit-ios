@@ -16,19 +16,19 @@ struct CreditCardView: View {
     @State private var text = ""
     let cardNumberLimit = 19
     var cardType: CardType = .MasterCard
-    @State var checkColor: Color =  Color.yellow
+    @State var checkColor: Color =  Color.green
     @State var unCheckColor: Color = Color.gray
    
     
     
     var body: some View {
         VStack {
-            HeaderView(userName: "Tola Sambo", userEmail: "omotola.sambo@seerbit.om")
+            HeaderView(userName: viewModel.nameOfUser, userEmail: viewModel.emailOfUser)
                 .padding(.top, 40)
             
             HStack {
                 VStack(alignment: .leading, spacing: 6) {
-                    Text("$\(viewModel.amountToPay.delimiter)")
+                    Text("\(viewModel.currency) \(viewModel.amountToPay.delimiter)")
                         .bold()
                         .font(.system(size: 30))
                         .padding(.top)
@@ -36,7 +36,8 @@ struct CreditCardView: View {
                     HStack {
                         Text("surcharge")
                             .font(.system(size: 15))
-                        Text("$\(viewModel.surchageFee.delimiter)")
+                        Text("\(viewModel.currency) \(viewModel.surchageFee.delimiter)")
+                            .font(.system(size: 15))
                     }
                 }
                Spacer()
@@ -50,10 +51,7 @@ struct CreditCardView: View {
                     Spacer()
                 }
                 .padding(.leading)
-                
-                HStack {
-                    
-                }
+            
                 TextField("Card Number", text: $cardNumber)
                     .onChange(of: cardNumber) { newValue in
                         cardNumber = newValue.applyPattern()
@@ -76,7 +74,7 @@ struct CreditCardView: View {
                         }
                     HStack{}
                     HStack {
-                        TextField("CVV", text: $expirationDate)
+                        TextField("CVV", text: $cvvCode)
                             .keyboardType(.numberPad)
                             .padding()
                             .padding(.trailing)
@@ -114,7 +112,6 @@ struct CreditCardView: View {
                 }
             }
             .padding([.leading, .trailing])
-            Spacer()
             
             HStack {
                 Image(uiImage: ImageProvider.image(named: "lockIcon") ?? UIImage())
@@ -122,10 +119,9 @@ struct CreditCardView: View {
                     .frame(width: 15, height: 20)
                 Image(uiImage: ImageProvider.image(named: "Secured-by-SeerBit") ?? UIImage())
             }
+            .padding(.top,25)
             Spacer()
         }
-        
-       
     }
     
     func limitText(_ upper: Int)  {

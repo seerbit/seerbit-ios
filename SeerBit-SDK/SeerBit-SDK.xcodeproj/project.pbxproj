@@ -28,6 +28,14 @@
 		18B909FD29BF810500BC0150 /* AuthenticateWithBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B909FC29BF810500BC0150 /* AuthenticateWithBank.swift */; };
 		18B909FF29C083B100BC0150 /* HelpingClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B909FE29C083B100BC0150 /* HelpingClass.swift */; };
 		18B90A0129C20EA800BC0150 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B90A0029C20EA800BC0150 /* CheckBoxView.swift */; };
+		18B90A0B29C2A41300BC0150 /* DropDownMenuTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B90A0A29C2A41300BC0150 /* DropDownMenuTest.swift */; };
+		18B90A0D29C2A58700BC0150 /* DropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B90A0C29C2A58700BC0150 /* DropdownMenu.swift */; };
+		18B90A0F29C2B0A500BC0150 /* DropdownMenuList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B90A0E29C2B0A500BC0150 /* DropdownMenuList.swift */; };
+		18B90A1129C2B25100BC0150 /* BankHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B90A1029C2B25100BC0150 /* BankHomeView.swift */; };
+		18B90A1329C2B57E00BC0150 /* BankViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B90A1229C2B57E00BC0150 /* BankViewModel.swift */; };
+		18B90A1529C2C33500BC0150 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B90A1429C2C33500BC0150 /* AccountView.swift */; };
+		18B90A1729C2CD8000BC0150 /* BVNView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B90A1629C2CD8000BC0150 /* BVNView.swift */; };
+		18B90A1929C3C46E00BC0150 /* SelectBirthdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B90A1829C3C46E00BC0150 /* SelectBirthdateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +63,14 @@
 		18B909FC29BF810500BC0150 /* AuthenticateWithBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateWithBank.swift; sourceTree = "<group>"; };
 		18B909FE29C083B100BC0150 /* HelpingClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpingClass.swift; sourceTree = "<group>"; };
 		18B90A0029C20EA800BC0150 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
+		18B90A0A29C2A41300BC0150 /* DropDownMenuTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownMenuTest.swift; sourceTree = "<group>"; };
+		18B90A0C29C2A58700BC0150 /* DropdownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownMenu.swift; sourceTree = "<group>"; };
+		18B90A0E29C2B0A500BC0150 /* DropdownMenuList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownMenuList.swift; sourceTree = "<group>"; };
+		18B90A1029C2B25100BC0150 /* BankHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankHomeView.swift; sourceTree = "<group>"; };
+		18B90A1229C2B57E00BC0150 /* BankViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewModel.swift; sourceTree = "<group>"; };
+		18B90A1429C2C33500BC0150 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		18B90A1629C2CD8000BC0150 /* BVNView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BVNView.swift; sourceTree = "<group>"; };
+		18B90A1829C3C46E00BC0150 /* SelectBirthdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBirthdateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +207,9 @@
 		18B90A0229C210D900BC0150 /* BankAccount */ = {
 			isa = PBXGroup;
 			children = (
+				18B90A0829C2A33700BC0150 /* ViewModel */,
+				18B90A0729C2A33000BC0150 /* Model */,
+				18B90A0529C2A31700BC0150 /* View */,
 			);
 			path = BankAccount;
 			sourceTree = "<group>";
@@ -207,6 +226,43 @@
 			children = (
 			);
 			path = Transfer;
+			sourceTree = "<group>";
+		};
+		18B90A0529C2A31700BC0150 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18B90A0929C2A34400BC0150 /* SubViews */,
+				18B90A1029C2B25100BC0150 /* BankHomeView.swift */,
+				18B90A1429C2C33500BC0150 /* AccountView.swift */,
+				18B90A1629C2CD8000BC0150 /* BVNView.swift */,
+				18B90A1829C3C46E00BC0150 /* SelectBirthdateView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18B90A0729C2A33000BC0150 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18B90A0A29C2A41300BC0150 /* DropDownMenuTest.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18B90A0829C2A33700BC0150 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				18B90A1229C2B57E00BC0150 /* BankViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		18B90A0929C2A34400BC0150 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				18B90A0C29C2A58700BC0150 /* DropdownMenu.swift */,
+				18B90A0E29C2B0A500BC0150 /* DropdownMenuList.swift */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,11 +386,19 @@
 				18B909F929BF749700BC0150 /* PassCodeView.swift in Sources */,
 				18B909E329BF364200BC0150 /* PrimaryButton.swift in Sources */,
 				18B909CC29BAC4D400BC0150 /* HeaderView.swift in Sources */,
+				18B90A1729C2CD8000BC0150 /* BVNView.swift in Sources */,
 				18B909FF29C083B100BC0150 /* HelpingClass.swift in Sources */,
+				18B90A1529C2C33500BC0150 /* AccountView.swift in Sources */,
+				18B90A0D29C2A58700BC0150 /* DropdownMenu.swift in Sources */,
 				18B909F729BF73CA00BC0150 /* PinView.swift in Sources */,
+				18B90A0B29C2A41300BC0150 /* DropDownMenuTest.swift in Sources */,
 				18B909F529BF6EF900BC0150 /* OtherPaymentChannelsView.swift in Sources */,
 				18B909FD29BF810500BC0150 /* AuthenticateWithBank.swift in Sources */,
 				18B909F329BF628500BC0150 /* ImageProvider.swift in Sources */,
+				18B90A1129C2B25100BC0150 /* BankHomeView.swift in Sources */,
+				18B90A0F29C2B0A500BC0150 /* DropdownMenuList.swift in Sources */,
+				18B90A1329C2B57E00BC0150 /* BankViewModel.swift in Sources */,
+				18B90A1929C3C46E00BC0150 /* SelectBirthdateView.swift in Sources */,
 				18B90A0129C20EA800BC0150 /* CheckBoxView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

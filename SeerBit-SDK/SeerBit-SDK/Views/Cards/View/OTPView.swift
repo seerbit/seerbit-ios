@@ -34,7 +34,7 @@ struct OTPView: View {
             }
             .padding(.leading)
            
-            Text("Kindly enter the OTP sent to 0*******9502 and o***********@gmail.com or enter the OTP genrates on your hardware token device")
+            Text("Kindly enter the OTP sent to your mobile number or email")
                 .padding()
                 .multilineTextAlignment(.center)
             

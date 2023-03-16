@@ -16,7 +16,8 @@ struct CheckBoxView: View {
        var body: some View {
            Image(uiImage: checked ?  ImageProvider.image(named: "checkmark") ?? UIImage() : ImageProvider.image(named: "rectangleCheck") ?? UIImage())
                .resizable()
-               .foregroundColor(checked ? Color(UIColor.systemBlue) : Color.secondary)
+               .renderingMode(.template)
+               .foregroundColor(checked ? Color(UIColor.systemGreen) : Color.gray)
                .onTapGesture {
                    self.checked.toggle()
                }

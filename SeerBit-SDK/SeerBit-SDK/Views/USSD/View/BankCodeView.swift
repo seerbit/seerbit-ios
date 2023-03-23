@@ -1,21 +1,16 @@
 //
-//  BankHomeView.swift
+//  BankCodeView.swift
 //  SeerBit-SDK
 //
-//  Created by Princess on 16/03/2023.
+//  Created by Princess on 18/03/2023.
 //
 
 import SwiftUI
 
-struct BankHomeView: View {
+struct BankCodeView: View {
     @ObservedObject var viewModel: BankViewModel
+    private let pasteboard = UIPasteboard.general
     
-    private var validated: Bool {
-        if viewModel.bankSelected != nil {
-            return true
-        }
-        return false
-     }
     var body: some View {
         VStack {
             HeaderView(userName: viewModel.userName, userEmail: viewModel.userEmail)
@@ -40,19 +35,33 @@ struct BankHomeView: View {
             .padding(.leading)
         
                 HStack {
-                    Text("Choose your bank to start this payment")
+                    Text("Dial the code below to complete this payment")
                         .padding(.top, 25)
                     Spacer()
                 }
                 .padding(.leading)
-                DropdownMenu(selectedBank: $viewModel.bankSelected, placeHolder: "Select Bank", banks: AllBanksModel.example) { bank in
-                    //
-                }
-                .padding(.bottom)
-                
-                PrimaryButton(title: "Pay \(viewModel.currencyToPayIn) \((viewModel.amountToPay + viewModel.surchageFee).delimiter)", width: 365, height: 55, validated: validated) {
-                    // navigate to next page 
-                }
+            VStack {
+                Text(viewModel.bankCodeGenerated)
+                    .fontWeight(.heavy)
+                    .font(.system(size: 30))
+            }
+            .frame(width: 330, height: 35)
+            .padding()
+            .background(Color(uiColor: ImageProvider.color(named: "secondaryButtonColor") ?? UIColor()))
+            .cornerRadius(7)
+            .padding(.bottom)
+           
+            Button {
+                pasteboard.string = viewModel.bankCodeGenerated
+            } label: {
+                Text("Click to copy code")
+                    .foregroundColor(.black)
+            }
+            .padding(.bottom)
+               
+            PrimaryButton(title: "Confirm Payment", width: 355, height: 55) {
+                //
+            }
             
             HStack {
                 Image(uiImage: ImageProvider.image(named: "lockIcon") ?? UIImage())
@@ -61,15 +70,13 @@ struct BankHomeView: View {
                 Image(uiImage: ImageProvider.image(named: "Secured-by-SeerBit") ?? UIImage())
             }
             .padding(.top,25)
-                
             Spacer()
-            }
         }
     }
-    
-    struct BankHomeView_Previews: PreviewProvider {
-        static var previews: some View {
-            BankHomeView(viewModel: BankViewModel())
-        }
-    }
+}
 
+struct BankCodeView_Previews: PreviewProvider {
+    static var previews: some View {
+        BankCodeView(viewModel: BankViewModel())
+    }
+}

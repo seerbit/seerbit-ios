@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18536BB529CBBB0D00533696 /* ProgressSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18536BB429CBBB0D00533696 /* ProgressSubView.swift */; };
+		18536BB729CBBB8300533696 /* ConfirmPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18536BB629CBBB8300533696 /* ConfirmPaymentView.swift */; };
+		18628AD629CBE0D600E564EE /* TransferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18628AD529CBE0D600E564EE /* TransferView.swift */; };
+		18628ADC29CBF00600E564EE /* TransferViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18628ADB29CBF00600E564EE /* TransferViewModel.swift */; };
+		18628ADE29CBF7AA00E564EE /* TransferModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18628ADD29CBF7AA00E564EE /* TransferModel.swift */; };
 		18B909BA29BAB19B00BC0150 /* SeerBit_SDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = 18B909B929BAB19B00BC0150 /* SeerBit_SDK.docc */; };
 		18B909BB29BAB19B00BC0150 /* SeerBit_SDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 18B909B829BAB19B00BC0150 /* SeerBit_SDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		18B909C629BAB26800BC0150 /* CreditCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B909C529BAB26800BC0150 /* CreditCardView.swift */; };
@@ -36,9 +41,15 @@
 		18B90A1529C2C33500BC0150 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B90A1429C2C33500BC0150 /* AccountView.swift */; };
 		18B90A1729C2CD8000BC0150 /* BVNView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B90A1629C2CD8000BC0150 /* BVNView.swift */; };
 		18B90A1929C3C46E00BC0150 /* SelectBirthdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B90A1829C3C46E00BC0150 /* SelectBirthdateView.swift */; };
+		18B90A1B29C5F7D500BC0150 /* BankCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B90A1A29C5F7D500BC0150 /* BankCodeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18536BB429CBBB0D00533696 /* ProgressSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressSubView.swift; sourceTree = "<group>"; };
+		18536BB629CBBB8300533696 /* ConfirmPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPaymentView.swift; sourceTree = "<group>"; };
+		18628AD529CBE0D600E564EE /* TransferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferView.swift; sourceTree = "<group>"; };
+		18628ADB29CBF00600E564EE /* TransferViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferViewModel.swift; sourceTree = "<group>"; };
+		18628ADD29CBF7AA00E564EE /* TransferModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferModel.swift; sourceTree = "<group>"; };
 		18B909B529BAB19B00BC0150 /* SeerBit_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SeerBit_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B909B829BAB19B00BC0150 /* SeerBit_SDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeerBit_SDK.h; sourceTree = "<group>"; };
 		18B909B929BAB19B00BC0150 /* SeerBit_SDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = SeerBit_SDK.docc; sourceTree = "<group>"; };
@@ -71,6 +82,7 @@
 		18B90A1429C2C33500BC0150 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		18B90A1629C2CD8000BC0150 /* BVNView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BVNView.swift; sourceTree = "<group>"; };
 		18B90A1829C3C46E00BC0150 /* SelectBirthdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBirthdateView.swift; sourceTree = "<group>"; };
+		18B90A1A29C5F7D500BC0150 /* BankCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankCodeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +103,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18536BB329CBBAED00533696 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				18536BB429CBBB0D00533696 /* ProgressSubView.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		18628AD729CBEBAB00E564EE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18628ADD29CBF7AA00E564EE /* TransferModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18628AD829CBEBB200E564EE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				18628ADB29CBF00600E564EE /* TransferViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		18628AD929CBEBC500E564EE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18536BB629CBBB8300533696 /* ConfirmPaymentView.swift */,
+				18B90A1A29C5F7D500BC0150 /* BankCodeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18628ADA29CBEC6C00E564EE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18628AD529CBE0D600E564EE /* TransferView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		18B909AB29BAB19B00BC0150 = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +270,8 @@
 		18B90A0329C210F200BC0150 /* USSD */ = {
 			isa = PBXGroup;
 			children = (
+				18628AD929CBEBC500E564EE /* View */,
+				18536BB329CBBAED00533696 /* SubViews */,
 			);
 			path = USSD;
 			sourceTree = "<group>";
@@ -224,6 +279,9 @@
 		18B90A0429C210F900BC0150 /* Transfer */ = {
 			isa = PBXGroup;
 			children = (
+				18628ADA29CBEC6C00E564EE /* View */,
+				18628AD829CBEBB200E564EE /* ViewModel */,
+				18628AD729CBEBAB00E564EE /* Model */,
 			);
 			path = Transfer;
 			sourceTree = "<group>";
@@ -378,21 +436,27 @@
 			files = (
 				18B909D729BAD28900BC0150 /* Text+Extensions.swift in Sources */,
 				18B909D529BAD00000BC0150 /* ViewModel.swift in Sources */,
+				18628ADC29CBF00600E564EE /* TransferViewModel.swift in Sources */,
 				18B909D929BAD39E00BC0150 /* Double+Extensions.swift in Sources */,
 				18B909BA29BAB19B00BC0150 /* SeerBit_SDK.docc in Sources */,
+				18B90A1B29C5F7D500BC0150 /* BankCodeView.swift in Sources */,
 				18B909C929BABA0600BC0150 /* String+Extensions.swift in Sources */,
 				18B909C629BAB26800BC0150 /* CreditCardView.swift in Sources */,
 				18B909FB29BF7DF700BC0150 /* OTPView.swift in Sources */,
 				18B909F929BF749700BC0150 /* PassCodeView.swift in Sources */,
 				18B909E329BF364200BC0150 /* PrimaryButton.swift in Sources */,
+				18536BB529CBBB0D00533696 /* ProgressSubView.swift in Sources */,
 				18B909CC29BAC4D400BC0150 /* HeaderView.swift in Sources */,
 				18B90A1729C2CD8000BC0150 /* BVNView.swift in Sources */,
+				18628ADE29CBF7AA00E564EE /* TransferModel.swift in Sources */,
+				18628AD629CBE0D600E564EE /* TransferView.swift in Sources */,
 				18B909FF29C083B100BC0150 /* HelpingClass.swift in Sources */,
 				18B90A1529C2C33500BC0150 /* AccountView.swift in Sources */,
 				18B90A0D29C2A58700BC0150 /* DropdownMenu.swift in Sources */,
 				18B909F729BF73CA00BC0150 /* PinView.swift in Sources */,
 				18B90A0B29C2A41300BC0150 /* DropDownMenuTest.swift in Sources */,
 				18B909F529BF6EF900BC0150 /* OtherPaymentChannelsView.swift in Sources */,
+				18536BB729CBBB8300533696 /* ConfirmPaymentView.swift in Sources */,
 				18B909FD29BF810500BC0150 /* AuthenticateWithBank.swift in Sources */,
 				18B909F329BF628500BC0150 /* ImageProvider.swift in Sources */,
 				18B90A1129C2B25100BC0150 /* BankHomeView.swift in Sources */,
@@ -448,6 +512,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -511,6 +576,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;

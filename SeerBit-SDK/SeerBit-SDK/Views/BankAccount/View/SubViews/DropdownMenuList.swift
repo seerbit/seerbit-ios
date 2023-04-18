@@ -45,3 +45,43 @@ struct DropdownMenuList_Previews: PreviewProvider {
         DropdownMenuList(banks: AllBanksModel.example, onSelectedAction: { _ in})
     }
 }
+
+
+struct DropdownMenuListForMomoNetworks: View {
+    let networks: [MomoNetworks]
+    let onSelectedAction: ( _ network: MomoNetworks) -> Void
+    
+    var body: some View {
+        
+        ScrollView {
+            LazyVStack(alignment: .leading, spacing: 2) {
+                ForEach(networks) { network in
+                    
+                    Button(action: {
+                        self.onSelectedAction(network)
+                    }) {
+                        Text(network.networks)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                    .foregroundColor(.black)
+                    .padding(.vertical, 10)
+                    .padding(.horizontal)
+                }
+            }
+        }
+        .frame(height: CGFloat(self.networks.count * 45) > 300
+            ? 300
+               : CGFloat(self.networks.count * 45)
+        )
+        .overlay {
+            RoundedRectangle(cornerRadius: 5)
+                .stroke(.gray, lineWidth: 1)
+        }
+    }
+}
+
+struct DropdownMenuListForMomoNetworks_Previews: PreviewProvider {
+    static var previews: some View {
+        DropdownMenuListForMomoNetworks(networks: MomoNetworks.example, onSelectedAction: { _ in})
+    }
+}

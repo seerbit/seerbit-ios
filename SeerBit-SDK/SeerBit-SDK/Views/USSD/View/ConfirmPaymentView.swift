@@ -10,6 +10,7 @@ import SwiftUI
 struct ConfirmPaymentView: View {
     @ObservedObject var viewModel: BankViewModel
     @State var value : Float = 0
+    @State private var isLoading = true
     
     var body: some View {
         VStack {
@@ -43,8 +44,22 @@ struct ConfirmPaymentView: View {
                 .padding(.leading)
             }
             
-            LoadingProgressBar()
-                .padding([.leading, .trailing])
+//            LoadingProgressBar()
+//                .padding([.leading, .trailing])
+            
+            Button(action: {
+                isLoading = true
+                //perform loading action
+                isLoading = false
+            }) {
+                if isLoading {
+                    LoadingProgressBar()
+                        .padding([.leading, .trailing])
+                } else {
+                    Text("hey")
+                }
+                
+            }
             
             Spacer()
         }

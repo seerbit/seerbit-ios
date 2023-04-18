@@ -42,6 +42,9 @@
 		18B90A1729C2CD8000BC0150 /* BVNView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B90A1629C2CD8000BC0150 /* BVNView.swift */; };
 		18B90A1929C3C46E00BC0150 /* SelectBirthdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B90A1829C3C46E00BC0150 /* SelectBirthdateView.swift */; };
 		18B90A1B29C5F7D500BC0150 /* BankCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B90A1A29C5F7D500BC0150 /* BankCodeView.swift */; };
+		18D1F53929D66C21003114EF /* ErrowPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D1F53829D66C21003114EF /* ErrowPopUp.swift */; };
+		18D1F53D29DEF3D7003114EF /* MobilePaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D1F53C29DEF3D6003114EF /* MobilePaymentView.swift */; };
+		18DC862329EEBC3000A70D32 /* ConfirmMomoPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DC862229EEBC3000A70D32 /* ConfirmMomoPaymentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +86,9 @@
 		18B90A1629C2CD8000BC0150 /* BVNView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BVNView.swift; sourceTree = "<group>"; };
 		18B90A1829C3C46E00BC0150 /* SelectBirthdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBirthdateView.swift; sourceTree = "<group>"; };
 		18B90A1A29C5F7D500BC0150 /* BankCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankCodeView.swift; sourceTree = "<group>"; };
+		18D1F53829D66C21003114EF /* ErrowPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrowPopUp.swift; sourceTree = "<group>"; };
+		18D1F53C29DEF3D6003114EF /* MobilePaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobilePaymentView.swift; sourceTree = "<group>"; };
+		18DC862229EEBC3000A70D32 /* ConfirmMomoPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmMomoPaymentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +193,7 @@
 		18B909C229BAB1F000BC0150 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				18D1F53A29DEF1D6003114EF /* MobilePayment */,
 				18B90A0429C210F900BC0150 /* Transfer */,
 				18B90A0329C210F200BC0150 /* USSD */,
 				18B90A0229C210D900BC0150 /* BankAccount */,
@@ -217,6 +224,7 @@
 				18B909D829BAD39E00BC0150 /* Double+Extensions.swift */,
 				18B909F229BF628500BC0150 /* ImageProvider.swift */,
 				18B909FE29C083B100BC0150 /* HelpingClass.swift */,
+				18D1F53829D66C21003114EF /* ErrowPopUp.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -321,6 +329,23 @@
 				18B90A0E29C2B0A500BC0150 /* DropdownMenuList.swift */,
 			);
 			path = SubViews;
+			sourceTree = "<group>";
+		};
+		18D1F53A29DEF1D6003114EF /* MobilePayment */ = {
+			isa = PBXGroup;
+			children = (
+				18D1F53B29DEF1F1003114EF /* Views */,
+			);
+			path = MobilePayment;
+			sourceTree = "<group>";
+		};
+		18D1F53B29DEF1F1003114EF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				18D1F53C29DEF3D6003114EF /* MobilePaymentView.swift */,
+				18DC862229EEBC3000A70D32 /* ConfirmMomoPaymentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -437,9 +462,11 @@
 				18B909D729BAD28900BC0150 /* Text+Extensions.swift in Sources */,
 				18B909D529BAD00000BC0150 /* ViewModel.swift in Sources */,
 				18628ADC29CBF00600E564EE /* TransferViewModel.swift in Sources */,
+				18D1F53D29DEF3D7003114EF /* MobilePaymentView.swift in Sources */,
 				18B909D929BAD39E00BC0150 /* Double+Extensions.swift in Sources */,
 				18B909BA29BAB19B00BC0150 /* SeerBit_SDK.docc in Sources */,
 				18B90A1B29C5F7D500BC0150 /* BankCodeView.swift in Sources */,
+				18DC862329EEBC3000A70D32 /* ConfirmMomoPaymentView.swift in Sources */,
 				18B909C929BABA0600BC0150 /* String+Extensions.swift in Sources */,
 				18B909C629BAB26800BC0150 /* CreditCardView.swift in Sources */,
 				18B909FB29BF7DF700BC0150 /* OTPView.swift in Sources */,
@@ -460,6 +487,7 @@
 				18B909FD29BF810500BC0150 /* AuthenticateWithBank.swift in Sources */,
 				18B909F329BF628500BC0150 /* ImageProvider.swift in Sources */,
 				18B90A1129C2B25100BC0150 /* BankHomeView.swift in Sources */,
+				18D1F53929D66C21003114EF /* ErrowPopUp.swift in Sources */,
 				18B90A0F29C2B0A500BC0150 /* DropdownMenuList.swift in Sources */,
 				18B90A1329C2B57E00BC0150 /* BankViewModel.swift in Sources */,
 				18B90A1929C3C46E00BC0150 /* SelectBirthdateView.swift in Sources */,

@@ -58,7 +58,7 @@ struct OTPView: View {
             }
             .padding(.trailing, 20)
             
-            PrimaryButton(title: "Authorize Payment", width: 350, height: 55) {
+            PrimaryButton(title: "Authorize Payment", width: 350, height: 55, validated: false) {
                 //
             }
             .padding([.top, .bottom])

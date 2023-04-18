@@ -18,110 +18,122 @@ struct CreditCardView: View {
     var cardType: CardType = .MasterCard
     @State var checkColor: Color =  Color.green
     @State var unCheckColor: Color = Color.gray
-   
+    @State var isPresenting = false
     
     
     var body: some View {
-        VStack {
-            HeaderView(userName: viewModel.nameOfUser, userEmail: viewModel.emailOfUser)
-                .padding(.top, 40)
+        NavigationStack {
             
-            HStack {
-                VStack(alignment: .leading, spacing: 6) {
-                    Text("\(viewModel.currency) \(viewModel.amountToPay.delimiter)")
-                        .bold()
-                        .font(.system(size: 30))
-                        .padding(.top)
-                        
-                    HStack {
-                        Text("surcharge")
-                            .font(.system(size: 15))
-                        Text("\(viewModel.currency) \(viewModel.surchageFee.delimiter)")
-                            .font(.system(size: 15))
-                    }
-                }
-               Spacer()
-            }
-            .padding(.leading)
-            
-            VStack(alignment: .leading) {
+            VStack {
+                HeaderView(userName: viewModel.nameOfUser, userEmail: viewModel.emailOfUser)
+                    .padding(.top, 40)
+                
                 HStack {
-                    Text("Debit/Credit Card Details")
-                        .padding([.top, .bottom])
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text("\(viewModel.currency) \(viewModel.amountToPay.delimiter)")
+                            .bold()
+                            .font(.system(size: 30))
+                            .padding(.top)
+                        
+                        HStack {
+                            Text("surcharge")
+                                .font(.system(size: 15))
+                            Text("\(viewModel.currency) \(viewModel.surchageFee.delimiter)")
+                                .font(.system(size: 15))
+                        }
+                    }
                     Spacer()
                 }
                 .padding(.leading)
-            
-                TextField("Card Number", text: $cardNumber)
-                    .onChange(of: cardNumber) { newValue in
-                        cardNumber = newValue.applyPattern()
-                        limitText(cardNumberLimit)
-                        //let cardType = validateCardNumber.checkCardNumber(input: cardNumber)
+                //ErrowPopUp()
+                
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text("Debit/Credit Card Details")
+                            .padding([.top, .bottom])
+                        Spacer()
                     }
-                    .padding()
-                    .border(Color.gray, width: 0.5)
-                    .padding([.leading, .trailing, .bottom])
-                    .keyboardType(.numberPad)
-
-                HStack {
-                    TextField("MM/YY", text: $expirationDate)
-                        .keyboardType(.numberPad)
+                    .padding(.leading)
+                    
+                    TextField("Card Number", text: $cardNumber)
+                        .onChange(of: cardNumber) { newValue in
+                            cardNumber = newValue.applyPattern()
+                            limitText(cardNumberLimit)
+                            //let cardType = validateCardNumber.checkCardNumber(input: cardNumber)
+                        }
                         .padding()
                         .border(Color.gray, width: 0.5)
-                        .padding(.leading)
-                        .onChange(of: expirationDate) { newValue in
-                           // expirationDate = String(newValue.textField(textField: <#T##UITextField#>, shouldChangeCharactersInRange: <#T##NSRange#>, replacementString: <#T##String#>))
-                        }
-                    HStack{}
+                        .padding([.leading, .trailing, .bottom])
+                        .keyboardType(.numberPad)
+                    
                     HStack {
-                        TextField("CVV", text: $cvvCode)
+                        TextField("MM/YY", text: $expirationDate)
                             .keyboardType(.numberPad)
                             .padding()
-                            .padding(.trailing)
-                        Image(uiImage: ImageProvider.image(named: "cardCVVlogo") ?? UIImage())
-                            .resizable()
-                            .frame(width: 25, height: 20)
-                            .padding(.trailing, 7)
+                            .border(Color.gray, width: 0.5)
+                            .padding(.leading)
+                            .onChange(of: expirationDate) { newValue in
+                                // expirationDate = String(newValue.textField(textField: <#T##UITextField#>, shouldChangeCharactersInRange: <#T##NSRange#>, replacementString: <#T##String#>))
+                            }
+                        HStack{}
+                        HStack {
+                            TextField("CVV", text: $cvvCode)
+                                .keyboardType(.numberPad)
+                                .padding()
+                                .padding(.trailing)
+                            Image(uiImage: ImageProvider.image(named: "cardCVVlogo") ?? UIImage())
+                                .resizable()
+                                .frame(width: 25, height: 20)
+                                .padding(.trailing, 7)
+                        }
+                        .overlay(RoundedRectangle(cornerRadius: 1).stroke(lineWidth: 0.2).foregroundColor(Color.black))
+                        .padding(.trailing)
+                        
                     }
-                    .overlay(RoundedRectangle(cornerRadius: 1).stroke(lineWidth: 0.2).foregroundColor(Color.black))
-                    .padding(.trailing)
-                   
+                    
+                    HStack {
+                        CheckBoxView(checked: $viewModel.rememberDevice,
+                                     checkColor: $checkColor,
+                                     unCheckColor: $unCheckColor)
+                        .frame(width: 20, height: 20)
+                        Text("Remember my information on this device")
+                    }
+                    .padding()
                 }
                 
+                PrimaryButton(title: "Pay $\((viewModel.amountToPay + viewModel.surchageFee).delimiter)", width: 355, height: 55, validated: false) {
+                    //
+                }
+                .padding(.bottom, 5)
+                
                 HStack {
-                    CheckBoxView(checked: $viewModel.rememberDevice,
-                                 checkColor: $checkColor,
-                                 unCheckColor: $unCheckColor)
-                    .frame(width: 20, height: 20)
-                    Text("Remember my information on this device")
+                    CustomButtonGray(title: "Change Payment Method", width: 200, height: 55) {
+                        isPresenting = true
+                    }
+                    CustomButtonRed(title: "Cancel Payment", width: 150, height: 55) {
+                        //
+                    }
                 }
-                .padding()
-            }
-            
-            PrimaryButton(title: "Pay $\((viewModel.amountToPay + viewModel.surchageFee).delimiter)", width: 355, height: 55, validated: false) {
-                //
-            }
-            .padding(.bottom, 5)
-            
-            HStack {
-                CustomButtonGray(title: "Change Payment Method", width: 200, height: 55) {
-                    //
+                .padding([.leading, .trailing])
+                
+                HStack {
+                    Image(uiImage: ImageProvider.image(named: "lockIcon") ?? UIImage())
+                        .resizable()
+                        .frame(width: 15, height: 20)
+                    Image(uiImage: ImageProvider.image(named: "Secured-by-SeerBit") ?? UIImage())
                 }
-                CustomButtonRed(title: "Cancel Payment", width: 150, height: 55) {
-                    //
-                }
+                .padding(.top,25)
+                Spacer()
+              
             }
-            .padding([.leading, .trailing])
-            
-            HStack {
-                Image(uiImage: ImageProvider.image(named: "lockIcon") ?? UIImage())
-                    .resizable()
-                    .frame(width: 15, height: 20)
-                Image(uiImage: ImageProvider.image(named: "Secured-by-SeerBit") ?? UIImage())
-            }
-            .padding(.top,25)
-            Spacer()
+            .navigationDestination(
+                 isPresented: $isPresenting) {
+                      OtherPaymentChannelsView(viewModel: CardViewModel())
+                      Text("")
+                          .hidden()
+                 }
         }
+        .navigationBarBackButtonHidden(true)
     }
     
     func limitText(_ upper: Int)  {

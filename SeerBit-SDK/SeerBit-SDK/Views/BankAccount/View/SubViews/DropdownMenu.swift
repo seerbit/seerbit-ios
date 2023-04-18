@@ -64,3 +64,63 @@ struct DropdownMenu_Previews: PreviewProvider {
         DropdownMenu(selectedBank: .constant(nil), placeHolder: "Select Bank", banks: AllBanksModel.example, onSelectedAction: { _ in})
     }
 }
+
+
+struct DropdownMenuForMomo: View {
+    @State private var isNetworkListSelected: Bool = false
+    @Binding var selectedNetwork: MomoNetworks?
+    let placeHolder: String
+    let network: [MomoNetworks]
+    let onSelectedAction: ( _ network: MomoNetworks) -> Void
+   
+    
+    
+    
+    var body: some View {
+        VStack {
+            Button(action: {
+                self.isNetworkListSelected.toggle()
+            }) {
+                HStack {
+                    Text((selectedNetwork == nil ? placeHolder : selectedNetwork?.networks) ?? "")
+                        .fontWeight(.medium)
+                        .foregroundColor(selectedNetwork == nil ? .gray : .black)
+                    
+                    Spacer()
+                    Image(systemName: self.isNetworkListSelected ? "chevron.up" : "chevron.down")
+                        .fontWeight(.medium)
+                        .foregroundColor(.gray)
+                }
+            }
+            .padding()
+            .overlay {
+                RoundedRectangle(cornerRadius: 5)
+                    .stroke(.gray, lineWidth: 1)
+            }
+            .overlay(alignment: .top) {
+                VStack {
+                    if self.isNetworkListSelected {
+                        Spacer(minLength: 60)
+                        DropdownMenuListForMomoNetworks(networks: self.network) { network in
+                            self.isNetworkListSelected = false
+                            self.selectedNetwork = network
+                        }
+                    }
+                }
+            }
+            .padding([.leading, .trailing])
+            .padding(
+                .bottom, self.isNetworkListSelected ?
+                CGFloat(self.network.count * 45) > 300 ? 300 :
+                    CGFloat(self.network.count * 45) :
+                    0
+            )
+        }
+    }
+}
+
+struct DropdownMenuForMomo_Previews: PreviewProvider {
+    static var previews: some View {
+        DropdownMenuForMomo(selectedNetwork: .constant(nil), placeHolder: "Select Network", network: MomoNetworks.example, onSelectedAction: { _ in})
+    }
+}

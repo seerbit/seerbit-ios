@@ -15,7 +15,7 @@ struct BankHomeView: View {
             return true
         }
         return false
-     }
+    }
     var body: some View {
         VStack {
             HeaderView(userName: viewModel.userName, userEmail: viewModel.userEmail)
@@ -38,21 +38,21 @@ struct BankHomeView: View {
                 Spacer()
             }
             .padding(.leading)
-        
-                HStack {
-                    Text("Choose your bank to start this payment")
-                        .padding(.top, 25)
-                    Spacer()
-                }
-                .padding(.leading)
-                DropdownMenu(selectedBank: $viewModel.bankSelected, placeHolder: "Select Bank", banks: AllBanksModel.example) { bank in
-                    //
-                }
-                .padding(.bottom)
-                
-                PrimaryButton(title: "Pay \(viewModel.currencyToPayIn) \((viewModel.amountToPay + viewModel.surchageFee).delimiter)", width: 365, height: 55, validated: validated) {
-                    // navigate to next page 
-                }
+            
+            HStack {
+                Text("Choose your bank to start this payment")
+                    .padding(.top, 25)
+                Spacer()
+            }
+            .padding(.leading)
+            DropdownMenu(selectedBank: $viewModel.bankSelected, placeHolder: "Select Bank", banks: viewModel.merchantBanks) { bank in
+                //
+            }
+            .padding(.bottom)
+            
+            PrimaryButton(title: "Pay \(viewModel.currencyToPayIn) \((viewModel.amountToPay + viewModel.surchageFee).delimiter)", width: 365, height: 55, validated: validated) {
+                // navigate to next page 
+            }
             
             HStack {
                 Image(uiImage: ImageProvider.image(named: "lockIcon") ?? UIImage())
@@ -61,15 +61,19 @@ struct BankHomeView: View {
                 Image(uiImage: ImageProvider.image(named: "Secured-by-SeerBit") ?? UIImage())
             }
             .padding(.top,25)
-                
+            
             Spacer()
-            }
+        }
+        .onAppear {
+            viewModel.getAllBanks()
         }
     }
     
-    struct BankHomeView_Previews: PreviewProvider {
-        static var previews: some View {
-            BankHomeView(viewModel: BankViewModel())
-        }
+}
+
+struct BankHomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        BankHomeView(viewModel: BankViewModel())
     }
+}
 

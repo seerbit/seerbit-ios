@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct DropdownMenuList: View {
-    let banks: [AllBanksModel]
-    let onSelectedAction: ( _ bank: AllBanksModel) -> Void
+    let banks: [MerchantBank]
+    let onSelectedAction: ( _ bank: MerchantBank) -> Void
     
     var body: some View {
         
@@ -42,7 +42,7 @@ struct DropdownMenuList: View {
 
 struct DropdownMenuList_Previews: PreviewProvider {
     static var previews: some View {
-        DropdownMenuList(banks: AllBanksModel.example, onSelectedAction: { _ in})
+        DropdownMenuList(banks: [], onSelectedAction: { _ in})
     }
 }
 

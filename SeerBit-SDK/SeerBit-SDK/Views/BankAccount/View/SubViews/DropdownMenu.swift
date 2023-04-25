@@ -9,10 +9,10 @@ import SwiftUI
 
 struct DropdownMenu: View {
     @State private var isBankListPresented: Bool = false
-    @Binding var selectedBank: AllBanksModel?
+    @Binding var selectedBank: MerchantBank?
     let placeHolder: String
-    let banks: [AllBanksModel]
-    let onSelectedAction: ( _ bank: AllBanksModel) -> Void
+    let banks: [MerchantBank]
+    let onSelectedAction: ( _ bank: MerchantBank) -> Void
     
     
     
@@ -61,7 +61,7 @@ struct DropdownMenu: View {
 
 struct DropdownMenu_Previews: PreviewProvider {
     static var previews: some View {
-        DropdownMenu(selectedBank: .constant(nil), placeHolder: "Select Bank", banks: AllBanksModel.example, onSelectedAction: { _ in})
+        DropdownMenu(selectedBank: .constant(nil), placeHolder: "Select Bank", banks: [], onSelectedAction: { _ in})
     }
 }
 

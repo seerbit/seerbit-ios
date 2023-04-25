@@ -15,4 +15,21 @@ class TransferViewModel: ObservableObject {
     @Published var currencyToPayIn: String = "NGN"
     @Published var surchageFee: Double = 0.0
     
+    var request: URLRequest = {
+        let url = URL(string: "https://seerbitapi.com/checkout/initiates")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        return request
+    }()
+    
+//    func initiateTransfer() async {
+//        do {
+//            
+//        } catch {
+//            
+//        }
+//    }
+    
 }
+
+

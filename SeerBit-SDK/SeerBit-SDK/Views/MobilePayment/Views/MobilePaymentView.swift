@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct MobilePaymentView: View {
-    @ObservedObject var viewModel: BankViewModel
+    @ObservedObject var viewModel: MomoViewModel
     @State private var phoneNumber = ""
     @State var isPresenting = false
+    let phoneNumberLimit = 9
     
     var body: some View {
-        NavigationStack {
             VStack {
                 HeaderView(userName: viewModel.userName, userEmail: viewModel.userEmail)
                     .padding(.top, 30)
@@ -48,11 +48,14 @@ struct MobilePaymentView: View {
                     TextField("000-0000-0000", text: $phoneNumber)
                         .keyboardType(.numberPad)
                         .padding()
+                        .onChange(of: phoneNumber) { newValue in
+                            limitText(phoneNumberLimit)
+                        }
                 }
                 .overlay(RoundedRectangle(cornerRadius: 1).stroke(lineWidth: 0.2).foregroundColor(Color.black))
                 .padding([.trailing, .leading])
                 .padding(.bottom)
-                DropdownMenuForMomo(selectedNetwork: $viewModel.momoNetworkSelected, placeHolder: "Select Network", network: MomoNetworks.example) { network in
+                DropdownMenuForMomo(selectedNetwork: $viewModel.momoNetworkSelected, placeHolder: "Select Network", network: viewModel.momo) { network in
                     //
                     
                 }
@@ -71,14 +74,18 @@ struct MobilePaymentView: View {
                           .hidden()
                  }
 
-        }
-        .navigationBarBackButtonHidden(true)
         
     }
+    
+    func limitText(_ upper: Int)  {
+           if phoneNumber.count > upper {
+               phoneNumber = String(phoneNumber.prefix(upper))
+           }
+       }
 }
 
 struct MobilePaymentView_Previews: PreviewProvider {
     static var previews: some View {
-        MobilePaymentView(viewModel: BankViewModel())
+        MobilePaymentView(viewModel: MomoViewModel())
     }
 }

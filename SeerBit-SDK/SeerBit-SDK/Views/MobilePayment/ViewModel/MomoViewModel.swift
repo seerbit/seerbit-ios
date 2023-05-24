@@ -1,16 +1,15 @@
 //
-//  BankViewModel.swift
+//  MomoViewModel.swift
 //  SeerBit-SDK
 //
-//  Created by Princess on 16/03/2023.
+//  Created by Princess on 27/04/2023.
 //
 
 import Foundation
 import UIKit
 import Combine
 
-
-public class BankViewModel: ObservableObject {
+public class MomoViewModel: ObservableObject {
     private var publishers = Set<AnyCancellable>()
     private let repository: RequestProtocol!
     
@@ -19,20 +18,19 @@ public class BankViewModel: ObservableObject {
     @Published var currencyToPayIn: String = "NGN"
     @Published var userName: String = "Tola Shimbo"
     @Published var userEmail: String = "omotola.sambo@seerbit.om"
-    @Published var bankSelected: MerchantBank? = nil
-    @Published var bankCodeGenerated: String = "*737*000*99099#"
-    @Published var merchantBanks: [MerchantBank] = []
+    @Published var momoNetworkSelected: MomoModel? = nil
+    @Published var momo: [MomoModel] = []
     
     init(with repository: RequestProtocol = Repository()) {
         self.repository = repository
     }
     
-    func getAllBanks() {
-        repository.fetchAllBank()
+    func initiateMomo() {
+        repository.initiateMomo()
             .sink { error in
                 print(error)
             } receiveValue: { result in
-                self.merchantBanks = result.data.merchantBanks
+                self.momo = result
             }
             .store(in: &publishers)
     }

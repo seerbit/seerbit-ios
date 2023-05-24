@@ -46,4 +46,5 @@ class CardViewModel: ObservableObject {
     @Published var emailOfUser: String = "omotola.sambo@seerbit.om"
     @Published var rememberDevice: Bool = false
     @Published var currency: String = "NGN"
+    @Published var isPresenting = false
 }

@@ -6,14 +6,22 @@
 //
 
 import Foundation
+import UIKit
+import Combine
 
 
 class TransferViewModel: ObservableObject {
+    
+    private var publishers = Set<AnyCancellable>()
+    private let repository: RequestProtocol!
+    
     @Published var userName: String = "Tola Shimbo"
     @Published var userEmail: String = "omotola.sambo@seerbit.om"
     @Published var amountToTransfer: Double = 0.0
     @Published var currencyToPayIn: String = "NGN"
     @Published var surchageFee: Double = 0.0
+    @Published var payments: Payments?
+    @Published var isPresenting: Bool = false
     
     var request: URLRequest = {
         let url = URL(string: "https://seerbitapi.com/checkout/initiates")!
@@ -22,13 +30,19 @@ class TransferViewModel: ObservableObject {
         return request
     }()
     
-//    func initiateTransfer() async {
-//        do {
-//            
-//        } catch {
-//            
-//        }
-//    }
+    init(with repository: RequestProtocol = Repository()) {
+        self.repository = repository
+    }
+    
+    func initiateTransfer() {
+        repository.initiateTransfer(value: InitiateTransfer(fullName: "", mobileNumber: "", email: "", publicKey: "", amount: "", currency: "", country: "", paymentReference: "", productID: "", productDescription: "", paymentType: "", channelType: "", deviceType: "", sourceIP: "", source: "", fee: "", retry: false, amountControl: "", walletDaysActive: "", bankCode: ""))
+            .sink { error in
+                print(error)
+            } receiveValue: { result in
+                self.payments = result.data.payments
+            }
+            .store(in: &publishers)
+    }
     
 }
 

@@ -44,8 +44,7 @@ struct GetBankDataClass: Codable {
 }
 
 // MARK: - MerchantBank
-struct MerchantBank: Codable, Identifiable {
-    var id: Int
+struct MerchantBank: Codable {
     let bankName, bankCode, directConnection: String
     let url, logo: String?
     let status, operation: String

@@ -15,7 +15,7 @@ struct DropdownMenuList: View {
         
         ScrollView {
             LazyVStack(alignment: .leading, spacing: 2) {
-                ForEach(banks) { bank in
+                ForEach(banks, id: \.bankCode) { bank in
                     
                     Button(action: {
                         self.onSelectedAction(bank)
@@ -48,14 +48,14 @@ struct DropdownMenuList_Previews: PreviewProvider {
 
 
 struct DropdownMenuListForMomoNetworks: View {
-    let networks: [MomoNetworks]
-    let onSelectedAction: ( _ network: MomoNetworks) -> Void
+    let networks: [MomoModel]
+    let onSelectedAction: ( _ network: MomoModel) -> Void
     
     var body: some View {
         
         ScrollView {
             LazyVStack(alignment: .leading, spacing: 2) {
-                ForEach(networks) { network in
+                ForEach(networks, id: \.id) { network in
                     
                     Button(action: {
                         self.onSelectedAction(network)
@@ -82,6 +82,6 @@ struct DropdownMenuListForMomoNetworks: View {
 
 struct DropdownMenuListForMomoNetworks_Previews: PreviewProvider {
     static var previews: some View {
-        DropdownMenuListForMomoNetworks(networks: MomoNetworks.example, onSelectedAction: { _ in})
+        DropdownMenuListForMomoNetworks(networks: [], onSelectedAction: { _ in})
     }
 }

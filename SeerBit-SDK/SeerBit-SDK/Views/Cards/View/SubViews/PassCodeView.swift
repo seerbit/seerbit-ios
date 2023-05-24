@@ -109,7 +109,7 @@ struct PassCodeView: View {
 
 struct PassCodeView_Previews: PreviewProvider {
     static var previews: some View {
-        PassCodeView(type: .pin) { _ in}
+        PassCodeView(type: .otp) { _ in}
             .previewLayout(.sizeThatFits)
     }
 }

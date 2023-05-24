@@ -7,4 +7,4 @@
 
 import Foundation
 
-let BASE_URL = "https://seerbitapi.com"
+let BASE_URL = "https://seerbitapi.com/"

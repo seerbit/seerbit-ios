@@ -68,10 +68,10 @@ struct DropdownMenu_Previews: PreviewProvider {
 
 struct DropdownMenuForMomo: View {
     @State private var isNetworkListSelected: Bool = false
-    @Binding var selectedNetwork: MomoNetworks?
+    @Binding var selectedNetwork: MomoModel?
     let placeHolder: String
-    let network: [MomoNetworks]
-    let onSelectedAction: ( _ network: MomoNetworks) -> Void
+    let network: [MomoModel]
+    let onSelectedAction: ( _ network: MomoModel) -> Void
    
     
     
@@ -121,6 +121,6 @@ struct DropdownMenuForMomo: View {
 
 struct DropdownMenuForMomo_Previews: PreviewProvider {
     static var previews: some View {
-        DropdownMenuForMomo(selectedNetwork: .constant(nil), placeHolder: "Select Network", network: MomoNetworks.example, onSelectedAction: { _ in})
+        DropdownMenuForMomo(selectedNetwork: .constant(nil), placeHolder: "Select Network", network: [], onSelectedAction: { _ in})
     }
 }

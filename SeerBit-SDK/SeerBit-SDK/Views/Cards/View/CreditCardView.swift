@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct CreditCardView: View {
-    @ObservedObject var viewModel: CardViewModel
+public struct CreditCardView: View {
+    @StateObject var viewModel: CardViewModel = CardViewModel()
     @State private var cardNumber = ""
     @State private var expirationDate = ""
     @State private var cvvCode = ""
@@ -18,12 +18,16 @@ struct CreditCardView: View {
     var cardType: CardType = .MasterCard
     @State var checkColor: Color =  Color.green
     @State var unCheckColor: Color = Color.gray
-    @State var isPresenting = false
     
     
-    var body: some View {
+    public init() {
+        
+    }
+    
+    public var body: some View {
+        
         NavigationStack {
-            
+        
             VStack {
                 HeaderView(userName: viewModel.nameOfUser, userEmail: viewModel.emailOfUser)
                     .padding(.top, 40)
@@ -90,15 +94,8 @@ struct CreditCardView: View {
                         .padding(.trailing)
                         
                     }
-                    
-                    HStack {
-                        CheckBoxView(checked: $viewModel.rememberDevice,
-                                     checkColor: $checkColor,
-                                     unCheckColor: $unCheckColor)
-                        .frame(width: 20, height: 20)
-                        Text("Remember my information on this device")
-                    }
-                    .padding()
+                    HStack{}
+                        .padding(.bottom)
                 }
                 
                 PrimaryButton(title: "Pay $\((viewModel.amountToPay + viewModel.surchageFee).delimiter)", width: 355, height: 55, validated: false) {
@@ -108,7 +105,7 @@ struct CreditCardView: View {
                 
                 HStack {
                     CustomButtonGray(title: "Change Payment Method", width: 200, height: 55) {
-                        isPresenting = true
+                        viewModel.isPresenting = true
                     }
                     CustomButtonRed(title: "Cancel Payment", width: 150, height: 55) {
                         //
@@ -127,7 +124,7 @@ struct CreditCardView: View {
               
             }
             .navigationDestination(
-                 isPresented: $isPresenting) {
+                isPresented: $viewModel.isPresenting) {
                       OtherPaymentChannelsView(viewModel: CardViewModel())
                       Text("")
                           .hidden()
@@ -145,6 +142,6 @@ struct CreditCardView: View {
 
 struct CreditCardView_Previews: PreviewProvider {
     static var previews: some View {
-        CreditCardView(viewModel: CardViewModel())
+        CreditCardView()
     }
 }

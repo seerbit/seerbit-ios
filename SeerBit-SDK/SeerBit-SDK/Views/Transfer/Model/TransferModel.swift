@@ -39,3 +39,20 @@ struct Payments: Codable {
     let paymentReference, linkingReference, walletName, wallet: String
     let bankName, accountNumber: String
 }
+
+
+// MARK: - Welcome
+struct InitiateTransfer: Codable {
+    let fullName, mobileNumber, email, publicKey: String
+    let amount, currency, country, paymentReference: String
+    let productID, productDescription, paymentType, channelType: String
+    let deviceType, sourceIP, source, fee: String
+    let retry: Bool
+    let amountControl, walletDaysActive, bankCode: String
+
+    enum CodingKeys: String, CodingKey {
+        case fullName, mobileNumber, email, publicKey, amount, currency, country, paymentReference
+        case productID = "productId"
+        case productDescription, paymentType, channelType, deviceType, sourceIP, source, fee, retry, amountControl, walletDaysActive, bankCode
+    }
+}

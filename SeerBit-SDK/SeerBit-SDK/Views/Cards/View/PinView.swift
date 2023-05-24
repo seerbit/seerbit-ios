@@ -41,6 +41,7 @@ struct PinView: View {
                 if pin.count == 4 {
                     completed(pin)
                 }
+            
             }
             Spacer()
         }

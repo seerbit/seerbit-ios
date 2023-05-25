@@ -9,10 +9,10 @@ import SwiftUI
 
 struct DropdownMenu: View {
     @State private var isBankListPresented: Bool = false
-    @Binding var selectedBank: AllBanksModel?
+    @Binding var selectedBank: MerchantBank?
     let placeHolder: String
-    let banks: [AllBanksModel]
-    let onSelectedAction: ( _ bank: AllBanksModel) -> Void
+    let banks: [MerchantBank]
+    let onSelectedAction: ( _ bank: MerchantBank) -> Void
     
     
     
@@ -61,17 +61,17 @@ struct DropdownMenu: View {
 
 struct DropdownMenu_Previews: PreviewProvider {
     static var previews: some View {
-        DropdownMenu(selectedBank: .constant(nil), placeHolder: "Select Bank", banks: AllBanksModel.example, onSelectedAction: { _ in})
+        DropdownMenu(selectedBank: .constant(nil), placeHolder: "Select Bank", banks: [], onSelectedAction: { _ in})
     }
 }
 
 
 struct DropdownMenuForMomo: View {
     @State private var isNetworkListSelected: Bool = false
-    @Binding var selectedNetwork: MomoNetworks?
+    @Binding var selectedNetwork: MomoModel?
     let placeHolder: String
-    let network: [MomoNetworks]
-    let onSelectedAction: ( _ network: MomoNetworks) -> Void
+    let network: [MomoModel]
+    let onSelectedAction: ( _ network: MomoModel) -> Void
    
     
     
@@ -121,6 +121,6 @@ struct DropdownMenuForMomo: View {
 
 struct DropdownMenuForMomo_Previews: PreviewProvider {
     static var previews: some View {
-        DropdownMenuForMomo(selectedNetwork: .constant(nil), placeHolder: "Select Network", network: MomoNetworks.example, onSelectedAction: { _ in})
+        DropdownMenuForMomo(selectedNetwork: .constant(nil), placeHolder: "Select Network", network: [], onSelectedAction: { _ in})
     }
 }

@@ -12,6 +12,10 @@
 		18628AD629CBE0D600E564EE /* TransferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18628AD529CBE0D600E564EE /* TransferView.swift */; };
 		18628ADC29CBF00600E564EE /* TransferViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18628ADB29CBF00600E564EE /* TransferViewModel.swift */; };
 		18628ADE29CBF7AA00E564EE /* TransferModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18628ADD29CBF7AA00E564EE /* TransferModel.swift */; };
+		18960E6A29FB1AAD001BDDA1 /* USSDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18960E6929FB1AAD001BDDA1 /* USSDModel.swift */; };
+		18960E6D29FB1B3D001BDDA1 /* USSDViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18960E6C29FB1B3D001BDDA1 /* USSDViewModel.swift */; };
+		18960E7029FB227E001BDDA1 /* MoMoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18960E6F29FB227E001BDDA1 /* MoMoModel.swift */; };
+		18960E7329FB22B8001BDDA1 /* MomoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18960E7229FB22B8001BDDA1 /* MomoViewModel.swift */; };
 		18B909BA29BAB19B00BC0150 /* SeerBit_SDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = 18B909B929BAB19B00BC0150 /* SeerBit_SDK.docc */; };
 		18B909BB29BAB19B00BC0150 /* SeerBit_SDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 18B909B829BAB19B00BC0150 /* SeerBit_SDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		18B909C629BAB26800BC0150 /* CreditCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B909C529BAB26800BC0150 /* CreditCardView.swift */; };
@@ -42,9 +46,18 @@
 		18B90A1729C2CD8000BC0150 /* BVNView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B90A1629C2CD8000BC0150 /* BVNView.swift */; };
 		18B90A1929C3C46E00BC0150 /* SelectBirthdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B90A1829C3C46E00BC0150 /* SelectBirthdateView.swift */; };
 		18B90A1B29C5F7D500BC0150 /* BankCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B90A1A29C5F7D500BC0150 /* BankCodeView.swift */; };
+		18BCCCA629F8030F0024A10E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BCCCA529F8030E0024A10E /* NetworkManager.swift */; };
+		18BCCCA929F803800024A10E /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BCCCA829F803800024A10E /* Repository.swift */; };
 		18D1F53929D66C21003114EF /* ErrowPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D1F53829D66C21003114EF /* ErrowPopUp.swift */; };
 		18D1F53D29DEF3D7003114EF /* MobilePaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D1F53C29DEF3D6003114EF /* MobilePaymentView.swift */; };
 		18DC862329EEBC3000A70D32 /* ConfirmMomoPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DC862229EEBC3000A70D32 /* ConfirmMomoPaymentView.swift */; };
+		18DC862629EF61AB00A70D32 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DC862529EF61AB00A70D32 /* ApiError.swift */; };
+		18DC862829EF62F500A70D32 /* GenericApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DC862729EF62F500A70D32 /* GenericApi.swift */; };
+		18DC862A29EF631B00A70D32 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DC862929EF631B00A70D32 /* Client.swift */; };
+		18DC862C29EF634000A70D32 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DC862B29EF634000A70D32 /* Constants.swift */; };
+		18DC862E29EF639100A70D32 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DC862D29EF639100A70D32 /* URLs.swift */; };
+		18F099BB2A050CD9003B95A7 /* CardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F099BA2A050CD9003B95A7 /* CardsModel.swift */; };
+		18F099BE2A13C73A003B95A7 /* MerchantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F099BD2A13C73A003B95A7 /* MerchantModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +66,10 @@
 		18628AD529CBE0D600E564EE /* TransferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferView.swift; sourceTree = "<group>"; };
 		18628ADB29CBF00600E564EE /* TransferViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferViewModel.swift; sourceTree = "<group>"; };
 		18628ADD29CBF7AA00E564EE /* TransferModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferModel.swift; sourceTree = "<group>"; };
+		18960E6929FB1AAD001BDDA1 /* USSDModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USSDModel.swift; sourceTree = "<group>"; };
+		18960E6C29FB1B3D001BDDA1 /* USSDViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USSDViewModel.swift; sourceTree = "<group>"; };
+		18960E6F29FB227E001BDDA1 /* MoMoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoMoModel.swift; sourceTree = "<group>"; };
+		18960E7229FB22B8001BDDA1 /* MomoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomoViewModel.swift; sourceTree = "<group>"; };
 		18B909B529BAB19B00BC0150 /* SeerBit_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SeerBit_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B909B829BAB19B00BC0150 /* SeerBit_SDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeerBit_SDK.h; sourceTree = "<group>"; };
 		18B909B929BAB19B00BC0150 /* SeerBit_SDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = SeerBit_SDK.docc; sourceTree = "<group>"; };
@@ -86,9 +103,18 @@
 		18B90A1629C2CD8000BC0150 /* BVNView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BVNView.swift; sourceTree = "<group>"; };
 		18B90A1829C3C46E00BC0150 /* SelectBirthdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBirthdateView.swift; sourceTree = "<group>"; };
 		18B90A1A29C5F7D500BC0150 /* BankCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankCodeView.swift; sourceTree = "<group>"; };
+		18BCCCA529F8030E0024A10E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		18BCCCA829F803800024A10E /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		18D1F53829D66C21003114EF /* ErrowPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrowPopUp.swift; sourceTree = "<group>"; };
 		18D1F53C29DEF3D6003114EF /* MobilePaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobilePaymentView.swift; sourceTree = "<group>"; };
 		18DC862229EEBC3000A70D32 /* ConfirmMomoPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmMomoPaymentView.swift; sourceTree = "<group>"; };
+		18DC862529EF61AB00A70D32 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		18DC862729EF62F500A70D32 /* GenericApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericApi.swift; sourceTree = "<group>"; };
+		18DC862929EF631B00A70D32 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		18DC862B29EF634000A70D32 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		18DC862D29EF639100A70D32 /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
+		18F099BA2A050CD9003B95A7 /* CardsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsModel.swift; sourceTree = "<group>"; };
+		18F099BD2A13C73A003B95A7 /* MerchantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +176,38 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		18960E6829FB1A91001BDDA1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18960E6929FB1AAD001BDDA1 /* USSDModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18960E6B29FB1ADD001BDDA1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				18960E6C29FB1B3D001BDDA1 /* USSDViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		18960E6E29FB2267001BDDA1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18960E6F29FB227E001BDDA1 /* MoMoModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18960E7129FB22A1001BDDA1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				18960E7229FB22B8001BDDA1 /* MomoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		18B909AB29BAB19B00BC0150 = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +228,9 @@
 		18B909B729BAB19B00BC0150 /* SeerBit-SDK */ = {
 			isa = PBXGroup;
 			children = (
+				18F099BC2A13C71D003B95A7 /* Model */,
+				18BCCCA729F8036B0024A10E /* Repository */,
+				18DC862429EF582200A70D32 /* Networking */,
 				18B909E129BAD90800BC0150 /* Info.plist */,
 				18B909C729BAB9EF00BC0150 /* Utils */,
 				18B909C229BAB1F000BC0150 /* Views */,
@@ -243,6 +304,7 @@
 		18B909D229BACFD200BC0150 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				18F099BA2A050CD9003B95A7 /* CardsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -278,6 +340,8 @@
 		18B90A0329C210F200BC0150 /* USSD */ = {
 			isa = PBXGroup;
 			children = (
+				18960E6B29FB1ADD001BDDA1 /* ViewModel */,
+				18960E6829FB1A91001BDDA1 /* Model */,
 				18628AD929CBEBC500E564EE /* View */,
 				18536BB329CBBAED00533696 /* SubViews */,
 			);
@@ -331,9 +395,19 @@
 			path = SubViews;
 			sourceTree = "<group>";
 		};
+		18BCCCA729F8036B0024A10E /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				18BCCCA829F803800024A10E /* Repository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		18D1F53A29DEF1D6003114EF /* MobilePayment */ = {
 			isa = PBXGroup;
 			children = (
+				18960E7129FB22A1001BDDA1 /* ViewModel */,
+				18960E6E29FB2267001BDDA1 /* Model */,
 				18D1F53B29DEF1F1003114EF /* Views */,
 			);
 			path = MobilePayment;
@@ -346,6 +420,27 @@
 				18DC862229EEBC3000A70D32 /* ConfirmMomoPaymentView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		18DC862429EF582200A70D32 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				18DC862529EF61AB00A70D32 /* ApiError.swift */,
+				18DC862729EF62F500A70D32 /* GenericApi.swift */,
+				18DC862929EF631B00A70D32 /* Client.swift */,
+				18DC862B29EF634000A70D32 /* Constants.swift */,
+				18DC862D29EF639100A70D32 /* URLs.swift */,
+				18BCCCA529F8030E0024A10E /* NetworkManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		18F099BC2A13C71D003B95A7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18F099BD2A13C73A003B95A7 /* MerchantModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -459,13 +554,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18F099BB2A050CD9003B95A7 /* CardsModel.swift in Sources */,
 				18B909D729BAD28900BC0150 /* Text+Extensions.swift in Sources */,
+				18DC862629EF61AB00A70D32 /* ApiError.swift in Sources */,
 				18B909D529BAD00000BC0150 /* ViewModel.swift in Sources */,
+				18BCCCA629F8030F0024A10E /* NetworkManager.swift in Sources */,
 				18628ADC29CBF00600E564EE /* TransferViewModel.swift in Sources */,
 				18D1F53D29DEF3D7003114EF /* MobilePaymentView.swift in Sources */,
+				18960E7029FB227E001BDDA1 /* MoMoModel.swift in Sources */,
 				18B909D929BAD39E00BC0150 /* Double+Extensions.swift in Sources */,
 				18B909BA29BAB19B00BC0150 /* SeerBit_SDK.docc in Sources */,
 				18B90A1B29C5F7D500BC0150 /* BankCodeView.swift in Sources */,
+				18960E7329FB22B8001BDDA1 /* MomoViewModel.swift in Sources */,
+				18960E6D29FB1B3D001BDDA1 /* USSDViewModel.swift in Sources */,
 				18DC862329EEBC3000A70D32 /* ConfirmMomoPaymentView.swift in Sources */,
 				18B909C929BABA0600BC0150 /* String+Extensions.swift in Sources */,
 				18B909C629BAB26800BC0150 /* CreditCardView.swift in Sources */,
@@ -474,23 +575,30 @@
 				18B909E329BF364200BC0150 /* PrimaryButton.swift in Sources */,
 				18536BB529CBBB0D00533696 /* ProgressSubView.swift in Sources */,
 				18B909CC29BAC4D400BC0150 /* HeaderView.swift in Sources */,
+				18F099BE2A13C73A003B95A7 /* MerchantModel.swift in Sources */,
 				18B90A1729C2CD8000BC0150 /* BVNView.swift in Sources */,
+				18DC862E29EF639100A70D32 /* URLs.swift in Sources */,
 				18628ADE29CBF7AA00E564EE /* TransferModel.swift in Sources */,
 				18628AD629CBE0D600E564EE /* TransferView.swift in Sources */,
 				18B909FF29C083B100BC0150 /* HelpingClass.swift in Sources */,
+				18DC862829EF62F500A70D32 /* GenericApi.swift in Sources */,
 				18B90A1529C2C33500BC0150 /* AccountView.swift in Sources */,
 				18B90A0D29C2A58700BC0150 /* DropdownMenu.swift in Sources */,
 				18B909F729BF73CA00BC0150 /* PinView.swift in Sources */,
 				18B90A0B29C2A41300BC0150 /* DropDownMenuTest.swift in Sources */,
+				18BCCCA929F803800024A10E /* Repository.swift in Sources */,
 				18B909F529BF6EF900BC0150 /* OtherPaymentChannelsView.swift in Sources */,
+				18DC862A29EF631B00A70D32 /* Client.swift in Sources */,
 				18536BB729CBBB8300533696 /* ConfirmPaymentView.swift in Sources */,
 				18B909FD29BF810500BC0150 /* AuthenticateWithBank.swift in Sources */,
 				18B909F329BF628500BC0150 /* ImageProvider.swift in Sources */,
 				18B90A1129C2B25100BC0150 /* BankHomeView.swift in Sources */,
 				18D1F53929D66C21003114EF /* ErrowPopUp.swift in Sources */,
 				18B90A0F29C2B0A500BC0150 /* DropdownMenuList.swift in Sources */,
+				18960E6A29FB1AAD001BDDA1 /* USSDModel.swift in Sources */,
 				18B90A1329C2B57E00BC0150 /* BankViewModel.swift in Sources */,
 				18B90A1929C3C46E00BC0150 /* SelectBirthdateView.swift in Sources */,
+				18DC862C29EF634000A70D32 /* Constants.swift in Sources */,
 				18B90A0129C20EA800BC0150 /* CheckBoxView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,9 +13,9 @@ struct OtherPaymentChannelsView: View {
     @State var isPresentingTransferView = false
     @State var isPresentingUSSDView = false
     @State var isPresentingCardView = false
+    @State var isPresentingPhoneNumber = false
     
     var body: some View {
-        NavigationStack {
             VStack {
                 HeaderView(userName: "Tola Sambo", userEmail: "omotola.sambo@seerbit.om")
                     .padding([.top, .bottom], 30)
@@ -28,21 +28,24 @@ struct OtherPaymentChannelsView: View {
                             .padding([.top, .leading])
                         Spacer()
                     }
+                    CustomButtonGray2(title: "Debit/Credit Card", width: 350, height: 55) {
+                        //
+                    }
+                    
                     CustomButtonGray2(title: "Bank Account", width: 350, height: 55) {
                         isPresentingBankAccountView = true
                     }
                     CustomButtonGray2(title: "Transfer", width: 350, height: 55) {
                         isPresentingTransferView = true
+                        //viewModel.
                     }
                     CustomButtonGray2(title: "USSD                                       *bank USSD code", width: 350, height: 55) {
                         isPresentingUSSDView = true
                     }
                     CustomButtonGray2(title: "Phone Number", width: 350, height: 55) {
-                        //
+                        isPresentingPhoneNumber = true
                     }
-                    CustomButtonGray2(title: "Cash                                Nearest Mobile Agents", width: 350, height: 55) {
-                        //
-                    }
+                 
                 }
                 
                 CustomButtonRed(title: "Cancel Payment", width: 155, height: 55) {
@@ -58,32 +61,43 @@ struct OtherPaymentChannelsView: View {
                 }
                Spacer()
             }
+            .onAppear{
+                viewModel.isPresenting = false
+            }
             
             .navigationDestination(
-                 isPresented: $isPresentingBankAccountView) {
-                      BankHomeView(viewModel: BankViewModel())
-                      Text("")
-                          .hidden()
-                 }
-                 .navigationDestination(
-                      isPresented: $isPresentingTransferView) {
-                          TransferView(viewModel: TransferViewModel(), model: TransferModel.example)
-                           Text("")
-                               .hidden()
-                      }
-                      .navigationDestination(
-                           isPresented: $isPresentingUSSDView) {
-                                BankCodeView(viewModel: BankViewModel())
+                isPresented: $isPresentingBankAccountView) {
+                    BankHomeView(viewModel: BankViewModel())
+                    Text("")
+                        .hidden()
+                }
+                .navigationDestination(
+                    isPresented: $isPresentingPhoneNumber) {
+                        MobilePaymentView(viewModel: MomoViewModel())
+                        Text("")
+                            .hidden()
+                    }
+                .navigationDestination(
+                    isPresented: $isPresentingTransferView) {
+                        TransferView(viewModel: TransferViewModel())
+                        Text("")
+                            .hidden()
+                    }
+                    .navigationDestination(
+                        isPresented: $isPresentingUSSDView) {
+                            BankCodeView(viewModel: BankViewModel())
+                            Text("")
+                                .hidden()
+                        }
+
+                        .navigationDestination(
+                            isPresented: $isPresentingCardView) {
+                                BankHomeView(viewModel: BankViewModel())
                                 Text("")
                                     .hidden()
-                           }
-                           .navigationDestination(
-                                isPresented: $isPresentingCardView) {
-                                     BankHomeView(viewModel: BankViewModel())
-                                     Text("")
-                                         .hidden()
-                                }
-        }
+                            }
+                           
+   
         //.navigationBarBackButtonHidden(true)
     }
 }
